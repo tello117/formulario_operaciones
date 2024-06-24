@@ -1,26 +1,40 @@
 <?php
 
 if($_SERVER["REQUEST_METHOD"]=="POST"){
-    $val1=$_POST['val1'];
-    $val2=$_POST['val2'];
+    $val1=!empty($_POST['val1']) ? $_POST['val1'] : "0";
+    $val2=!empty($_POST['val2']) ? $_POST['val2'] : "0";
     $operacion=$_POST['operacion'];
+
+    function suma($a, $b){
+        return $a + $b;
+    }
+    function resta($a, $b){
+        return $a - $b;
+    }
+    function multiplicacion($a, $b){
+        return $a * $b;
+    }
+    function divicion($a, $b){
+        if($b==0){
+            echo "no se puede dividir entre 0 ";
+        }
+        else{
+            return $a / $b;
+        }
+    }
 
     switch($operacion){
         case 'suma':
-            $resultado = $val1+$val2;
-            echo "el resultado es:". $resultado;
+            echo "el resultado es:". suma($val1, $val2);
             break;
         case 'resta':
-            $resultado = $val1-$val2;
-            echo "el resultado es:". $resultado;
+            echo "el resultado es:". resta($val1, $val2);
             break;
         case 'multi':
-            $resultado = $val1*$val2;
-            echo "el resultado es:". $resultado;
+            echo "el resultado es:". multiplicacion($val1, $val2);
             break;
         case 'div':
-            $resultado = $val1/$val2;
-            echo "el resultado es:". $resultado;
+            echo "el resultado es: ". divicion($val1, $val2);
             break;
         default:
             echo "opcion no valida";

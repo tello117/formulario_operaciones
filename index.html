@@ -8,18 +8,18 @@
 </head>
 <body>
     <form class="formulario" action="./operaciones.php" method="POST">
-            <label for="valor1">Valor 1</label><br>
-            <input type="text" name="val1" minlength="1"><br>
+            <label class="label" for="valor1">Valor 1</label><br>
+            <input class="input" type="number" name="val1" required><br>
             
-            <label for="valo2">Valor 2</label><br>
-            <input type="text" name="val2"><br>
-            <select name="operacion">
+            <label class="label" for="valo2">Valor 2</label><br>
+            <input class="input" type="number" name="val2" required><br>
+            <select class="lista" name="operacion">
                 <option name="operacion" value="suma">SUMA</option>
                 <option name="operacion" value="resta">RESTA</option>
                 <option name="operacion" value="multi">MULTIPLICACIÓN</option>
                 <option name="operacion" value="div" >DIVICIÓN</option>
             </select>
-            <input type="submit" name="">
+            <input class="submit" type="submit" name="">
     </form>
 </body>
 </html>

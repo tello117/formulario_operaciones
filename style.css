@@ -1,0 +1,8 @@
+body{
+    justify-content: center;
+    justify-items: center;
+}
+.formulario{
+    display: block;
+    justify-items: center;
+}
